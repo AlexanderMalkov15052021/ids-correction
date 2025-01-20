@@ -1,0 +1,32 @@
+{
+  "name": "dxf-to-json",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.4.0",
+    "@ant-design/nextjs-registry": "^1.0.0",
+    "@tarikjabiri/dxf": "^2.8.9",
+    "antd": "^5.19.3",
+    "dxf-parser-writer": "^1.0.0",
+    "mobx": "^6.13.1",
+    "mobx-react-lite": "^4.0.7",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "typescript": "^5",
+    "worker-loader": "^3.0.8"
+  }
+}
