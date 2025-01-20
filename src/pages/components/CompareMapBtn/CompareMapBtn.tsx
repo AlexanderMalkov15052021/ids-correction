@@ -23,7 +23,7 @@ const CompareMapBtn = observer(() => {
         </Button>
 
         <Modal
-            title="Результат проверки карты на идентичность"
+            title={"Результат проверки карты на идентичность"}
             open={compareFilesModalState}
             onOk={cancelHandler}
             onCancel={cancelHandler}
@@ -34,13 +34,13 @@ const CompareMapBtn = observer(() => {
             {isCompareFiles
                 ? <div style={{ display: "flex", gap: "16px" }}>
                     <p>
-                        "Карты абсолютно идентичны!"
+                        Карты абсолютно идентичны!
                     </p>
                     <CheckCircleOutlined style={{ fontSize: "36px", color: "#00EE00" }} />
                 </div>
                 : <div style={{ display: "flex", gap: "16px" }}>
                     <p>
-                        "Карты имеют отличия!"
+                        Карты имеют отличия!
                     </p>
                     <CloseCircleOutlined style={{ fontSize: "36px", color: "#FF4040" }} />
                 </div>
