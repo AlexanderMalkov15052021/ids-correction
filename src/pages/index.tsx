@@ -6,7 +6,7 @@ import Title from "antd/lib/typography/Title";
 import TypeErrorMessage from "./components/TypeErrorMessage/TypeErrorMessage";
 import LoadingBlock from "./components/LoadingBlock/LoadingBlock";
 import DownloadBtn from "./components/DownloadBtn/DownloadBtn";
-import { UploadBlock } from "./components/UploadBlock/UploadBlock";
+import UploadBlock from "./components/UploadBlock/UploadBlock";
 import CompareIdBtn from "./components/CompareIdBtn/CompareIdBtn";
 import CompareMapBtn from "./components/CompareMapBtn/CompareMapBtn";
 import MapSettings from "./components/MapSettings/MapSettings";
@@ -27,7 +27,7 @@ export default function Home() {
       </Head>
       <div className={"main-container"}>
 
-        <Image className={"mainImg"} preview={false} src="img/svg/ak.svg"></Image>
+        <Image alt={"logo"} className={"mainImg"} preview={false} src="img/svg/ak.svg"></Image>
 
         <Title className={"h1"}>
           <span className={"titleBlock"}>

@@ -2,7 +2,7 @@ import { ConverterStor } from "@/entities";
 import UploadForm from "../UploadForm/UploadForm";
 import { observer } from "mobx-react-lite";
 
-export const UploadBlock = observer(() => {
+const UploadBlock = observer(() => {
 
     const {
         store: { sourceFileName, outputFileName, setSourceFileName, setOutputFileName, setSourceFile, setOutputFile },
@@ -28,3 +28,5 @@ export const UploadBlock = observer(() => {
 
     </>);
 });
+
+export default UploadBlock;
