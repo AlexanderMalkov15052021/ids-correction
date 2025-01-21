@@ -2,20 +2,20 @@ import { ConverterStor } from "@/entities";
 import { Button } from "antd/lib";
 import { observer } from "mobx-react-lite";
 
-const CompareIdBtn = observer(() => {
+const CheckIdBtn = observer(() => {
     const {
-        store: { sourceFile, outputFile, compareIds },
+        store: { outputFile, checkIds },
     } = ConverterStor;
 
     return <>
         <Button
             className="buttun-upload"
-            disabled={sourceFile && outputFile ? false : true} type={"primary"}
-            onClick={compareIds}
+            disabled={outputFile ? false : true} type={"primary"}
+            onClick={checkIds}
         >
-            Сравнить ID
+            Проверить дубли ID
         </Button>
     </>
 });
 
-export default CompareIdBtn;
+export default CheckIdBtn;

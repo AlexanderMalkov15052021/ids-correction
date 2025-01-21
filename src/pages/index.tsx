@@ -7,13 +7,14 @@ import TypeErrorMessage from "./components/TypeErrorMessage/TypeErrorMessage";
 import LoadingBlock from "./components/LoadingBlock/LoadingBlock";
 import DownloadBtn from "./components/DownloadBtn/DownloadBtn";
 import UploadBlock from "./components/UploadBlock/UploadBlock";
-import CompareIdBtn from "./components/CompareIdBtn/CompareIdBtn";
 import CompareMapBtn from "./components/CompareMapBtn/CompareMapBtn";
 import MapSettings from "./components/MapSettings/MapSettings";
 import RemoveDuplicateIdsBtn from "./components/RemoveDuplicateIdsBtn/RemoveDuplicateIdsBtn";
 import RedefineIdsBtn from "./components/RedefineIdsBtn/RedefineIdsBtn";
 import RenameBtn from "./components/RenameBtn/RenameBtn";
 import RedefineAllIdsBtn from "./components/RedefineAllIdsBtn/RedefineAllIdsBtn";
+import ModalIds from "./components/ModalIds/ModalIds";
+import CheckIdBtn from "./components/CheckIdBtn/CheckIdBtn";
 
 export default function Home() {
 
@@ -43,7 +44,7 @@ export default function Home() {
 
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
 
-              <CompareIdBtn />
+              <CheckIdBtn />
 
               <RenameBtn />
 
@@ -70,6 +71,8 @@ export default function Home() {
           <LoadingBlock />
 
           <MapSettings />
+
+          <ModalIds />
 
         </main>
       </div>
