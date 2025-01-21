@@ -195,6 +195,32 @@ class ConverterStor {
 
     }
 
+    compareRoadsAndPoints = () => {
+
+        if (this.sourceFile && this.outputFile) {
+
+            const sourceRoadsAndPoints = {
+                points: this.sourceFile.mLaneMarks,
+                roads: this.sourceFile.mRoads
+            }
+
+            const outputRoadsAndPoints = {
+                points: this.outputFile.mLaneMarks,
+                roads: this.outputFile.mRoads
+            }
+
+            const sourceFile = JSON.stringify(sourceRoadsAndPoints);
+
+            const outputFile = JSON.stringify(outputRoadsAndPoints);
+
+            this.isCompareFiles = sourceFile === outputFile;
+
+            this.compareFilesModalState = true;
+
+        }
+
+    }
+
     renameObj = () => {
 
         if (this.outputFile) {

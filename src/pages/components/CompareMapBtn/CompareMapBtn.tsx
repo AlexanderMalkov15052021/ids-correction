@@ -1,26 +1,46 @@
 import { ConverterStor } from "@/entities";
 import { CheckCircleOutlined, CloseCircleOutlined } from "@ant-design/icons";
-import { Modal } from "antd/lib";
+import { Modal, Popconfirm } from "antd/lib";
 import { Button } from "antd/lib";
 import { observer } from "mobx-react-lite";
 
 const CompareMapBtn = observer(() => {
     const {
-        store: { sourceFile, outputFile, isCompareFiles, compareFilesModalState, compareFiles, setCompareFilesModalState },
+        store: {
+            sourceFile, outputFile, isCompareFiles, compareFilesModalState, compareFiles, compareRoadsAndPoints,
+            setCompareFilesModalState
+        },
     } = ConverterStor;
 
     const cancelHandler = () => {
         setCompareFilesModalState(false);
     }
 
+    const setStateConfirm = () => {
+        compareRoadsAndPoints();
+    }
+
+    const setStateCancel = () => {
+        compareFiles();
+    }
+
     return <>
-        <Button
-            className="buttun-upload"
-            disabled={sourceFile && outputFile ? false : true} type={"primary"}
-            onClick={compareFiles}
+        <Popconfirm
+            title={"Сравнение карт!"}
+            description={"Сравнить только дороги и точки?"}
+            onConfirm={setStateConfirm}
+            onCancel={setStateCancel}
+            okText="Да"
+            cancelText="Нет"
+            okType="default"
         >
-            Сравнить файлы
-        </Button>
+            <Button
+                className="buttun-upload"
+                disabled={sourceFile && outputFile ? false : true} type={"primary"}
+            >
+                Сравнить файлы
+            </Button>
+        </Popconfirm>
 
         <Modal
             title={"Результат проверки карты на идентичность"}
