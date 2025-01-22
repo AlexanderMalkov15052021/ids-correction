@@ -8,16 +8,10 @@ const LoadingBlock = observer(() => {
     } = ConverterStor;
 
     return (
-        isLoading && <>
+        isLoading && <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
             <p className={"converting"}>Обработка...</p>
-            {/* <div className={"counter"}>
-                <span style={{ color: "rgba(0, 0, 0, 0.88)" }}>{loadingTime && loadingTime[0]}</span>
-                <span> - мин. : </span>
-                <span style={{ color: "rgba(0, 0, 0, 0.88)" }}>{loadingTime && loadingTime[1]}</span>
-                <span> - сек.</span>
-            </div> */}
             <Spin />
-        </>
+        </div>
     );
 });
 

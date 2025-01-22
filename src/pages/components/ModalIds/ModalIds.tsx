@@ -6,10 +6,13 @@ let count = 0;
 
 const ModalIds = observer(() => {
     const {
-        store: { modalIdsState, duplicateObjectsGroup, duplicateObjects, setModalIdsState },
+        store: { modalIdsState, duplicateObjectsGroup, duplicateObjects, refreshCheckIds, setModalIdsState },
     } = ConverterStor;
 
     const cancelHandler = () => {
+
+        refreshCheckIds();
+
         setModalIdsState(false);
     }
 
