@@ -426,6 +426,13 @@ class ConverterStor {
                             pointIdsBuffer: getPointIdsBuffer(this.outputFile)
                         }
 
+                        objData.tmpDoc.mLaneMarks.map(point => {
+                            if (objData.duplicateIds.includes(point.mLaneMarkID)) {
+                                point.mLaneMarkID = objData.pointIdsBuffer[objData.pointIdsBuffer.length - 1];
+                                objData.pointIdsBuffer.pop();
+                            }
+                        });
+
                         objData.tmpDoc.mRoads.map(road => {
                             if (objData.duplicateIds.includes(road.mRoadID)) {
                                 road.mRoadID = objData.roadIdsBuffer[objData.roadIdsBuffer.length - 1];

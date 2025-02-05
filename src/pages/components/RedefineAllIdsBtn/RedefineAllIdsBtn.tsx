@@ -8,7 +8,7 @@ const RedefineAllIdsBtn = observer(() => {
     } = ConverterStor;
 
     return <>
-        <Tooltip title={"Не работает с точками!"}>
+        <Tooltip title={"Может заменить не новые ID точек!"}>
             <Button
                 className="buttun-upload"
                 disabled={outputFile ? false : true} type={"primary"}
