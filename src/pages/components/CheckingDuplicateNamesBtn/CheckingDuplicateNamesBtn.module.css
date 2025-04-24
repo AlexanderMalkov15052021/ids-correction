@@ -1,0 +1,22 @@
+.duplicatesNamesBlock {
+    box-shadow: 1px 1px 3px red, -1px -1px 3px red;
+    margin: 12px;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.duplicatesNamesWrapper {
+    border: 1px solid red;
+    margin: 12px;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.duplicatesNamesTitle {
+    text-align: center;
+}
+
+.duplicatesNamesCoords {
+    display: flex;
+    justify-content: space-around;
+}

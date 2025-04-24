@@ -15,6 +15,7 @@ import RenameBtn from "./components/RenameBtn/RenameBtn";
 import RedefineAllIdsBtn from "./components/RedefineAllIdsBtn/RedefineAllIdsBtn";
 import ModalIds from "./components/ModalIds/ModalIds";
 import CheckIdBtn from "./components/CheckIdBtn/CheckIdBtn";
+import CheckingDuplicateNamesBtn from "./components/CheckingDuplicateNamesBtn/CheckingDuplicateNamesBtn";
 
 export default function Home() {
 
@@ -63,6 +64,8 @@ export default function Home() {
             </div>
 
           </div>
+
+          <CheckingDuplicateNamesBtn />
 
           <DownloadBtn />
 

@@ -40,8 +40,49 @@ class ConverterStor {
 
     modalIdsState: boolean = false;
 
+
+    // Дубли имён
+    duplicatesNames: laneMark[][] = [];
+
+    // Флаг модалки дублей имён
+    isNameDuplicatesModalOpen = false;
+
     constructor() {
         makeAutoObservable(this);
+    }
+
+    // Установка флага модалки дублей имён
+    setDuplicatePointNamesModalState = (val: boolean) => {
+        this.isNameDuplicatesModalOpen = val;
+    }
+
+    // Проверка дубликатов имён
+    checkingDuplicateNames = () => {
+        if (this.sourceFile) {
+
+            // Получение дубликатов имён
+            const pointList = this.sourceFile?.mLaneMarks.filter((obj: laneMark) => obj.mLaneMarkName).reduce((accum: any, obj: laneMark) => {
+
+                if (accum.points[obj.mLaneMarkName]) {
+                    accum.points[obj.mLaneMarkName].push(obj);
+                }
+                else {
+                    accum.points[obj.mLaneMarkName] = [obj];
+                }
+
+                return accum;
+            }, { points: {} });
+
+            const dublicates = (Object.values(pointList.points) as laneMark[][]).filter((arr: laneMark[]) => arr.length > 1);
+
+            this.duplicatesNames = dublicates;
+
+            dublicates.length && (this.isNameDuplicatesModalOpen = true);
+
+
+            this.setDuplicatePointNamesModalState(true);
+
+        }
     }
 
     setModalIdsState = (state: boolean) => {
